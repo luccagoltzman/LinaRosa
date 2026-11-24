@@ -28,6 +28,18 @@ js/
 
 Para mudar data, horário, local ou o número do WhatsApp, edite `js/config.js` (e os textos correspondentes no `index.html`).
 
+## Capa de compartilhamento
+
+A imagem que aparece ao compartilhar o link (WhatsApp, Instagram etc.) é `assets/capa.jpg`, gerada a partir de `social/capa.html`. Para regenerá-la depois de mudar a arte, com o servidor local rodando:
+
+```
+chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=6000 --screenshot=capa.png http://localhost:8000/social/capa.html
+```
+
+e converta `capa.png` para `assets/capa.jpg`.
+
+Se o endereço do site mudar, atualize as URLs `og:url`, `og:image` e `twitter:image` no `index.html`.
+
 ## Rodando localmente
 
 Os scripts usam módulos JavaScript, que não funcionam abrindo o arquivo direto. Rode um servidor nesta pasta:
