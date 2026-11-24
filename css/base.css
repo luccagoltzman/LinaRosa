@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Base: variáveis, reset, tipografia e utilitários
+   ========================================================================== */
+
+:root {
+  /* Cores */
+  --cream: #f9f2e8;
+  --paper: #fdf9f3;
+  --rose: #c4675f;
+  --rose-soft: #e8b7ae;
+  --wine: #864841;
+  --wine-deep: #5e302b;
+  --olive: #5d6442;
+  --ink: #4b4839;
+  --ink-soft: #7a7461;
+  --gold: #b89a6a;
+  --line: rgba(184, 154, 106, .45);
+  --error: #a2453d;
+
+  /* Movimento */
+  --ease: cubic-bezier(.7, .02, .2, .98);
+
+  /* Fontes */
+  --script: "Pinyon Script", "Snell Roundhand", cursive;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Jost", system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--cream);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.15vw + 10px, 21px);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--rose-soft);
+  color: var(--wine);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose);
+  border-radius: 10px;
+}
+
+:focus-visible {
+  outline: 1px solid var(--rose);
+  outline-offset: 4px;
+}
+
+/* ---------- Lenis (rolagem suave) ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* ---------- Layout ---------- */
+section {
+  position: relative;
+}
+
+.wrap {
+  width: min(1120px, 100% - 32px);
+  margin-inline: auto;
+}
+
+/* ---------- Tipografia utilitária ---------- */
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: .68rem;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+/* Texto dividido em palavras (.w) e letras (.c) pelo split-text.js */
+.w {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.c {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform;
+}
+
+.mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding: .06em .02em;
+  margin: -.06em -.02em;
+}
+
+.mask > span {
+  display: inline-block;
+}
+
+/* ---------- Acessibilidade: menos movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: .01ms !important;
+  }
+}

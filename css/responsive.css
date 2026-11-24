@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Ajustes para tablet e celular
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .pnav {
+    display: none;
+  }
+
+  .place-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .place-art {
+    order: -1;
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .place-copy {
+    text-align: center;
+  }
+
+  .place-btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .eyebrow {
+    letter-spacing: .26em;
+  }
+
+  .frame {
+    inset: 10px;
+  }
+
+  .flora--tl {
+    top: -8vw;
+    left: -30vw;
+    width: 110vw;
+  }
+
+  .flora--br {
+    right: -38vw;
+    bottom: -6vw;
+    width: 105vw;
+  }
+
+  .flora--bl {
+    right: auto;
+    left: -38vw;
+  }
+
+  .choice {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .cd {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cd-sep {
+    display: none;
+  }
+
+  .btn {
+    letter-spacing: .2em;
+  }
+}

@@ -1,0 +1,334 @@
+/* ==========================================================================
+   Componentes reutilizáveis
+   ========================================================================== */
+
+/* ---------- Grão de papel ---------- */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: .09;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .25 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+
+@keyframes grain {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -3%); }
+  60%  { transform: translate(-2%, -1%); }
+  80%  { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- Loader (contador 0 → 85) ---------- */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.loader-panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.loader-panel {
+  flex: 1;
+  height: 100%;
+  margin-right: -1px;
+  background: var(--paper);
+}
+
+.loader-panel:nth-child(even) {
+  background: #fbf4ea;
+}
+
+.loader-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.loader-count {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(6rem, 22vw, 15rem);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: .9;
+  letter-spacing: -.02em;
+  color: var(--rose);
+}
+
+.loader-bar {
+  position: relative;
+  width: min(220px, 50vw);
+  height: 1px;
+  margin: 1.4rem auto 0;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.loader-bar i {
+  position: absolute;
+  inset: 0;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.loader-label {
+  margin-top: 1.4rem;
+}
+
+/* ---------- Florais ---------- */
+.flora {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.flora img {
+  width: 100%;
+  height: auto;
+}
+
+.flora--tl {
+  top: -2vw;
+  left: -6vw;
+  width: clamp(300px, 46vw, 760px);
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 25% 25%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 75% 75% at 25% 25%, #000 55%, transparent 100%);
+}
+
+.flora--br {
+  bottom: -3vw;
+  right: -5vw;
+  width: clamp(280px, 42vw, 700px);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 70% 70%, #000 50%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 80% at 70% 70%, #000 50%, transparent 100%);
+}
+
+/* Buquê espelhado no canto inferior esquerdo do final */
+.flora--bl {
+  right: auto;
+  left: -6vw;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 70%, #000 50%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 80% at 30% 70%, #000 50%, transparent 100%);
+}
+
+.flora--bl img {
+  transform: scaleX(-1);
+}
+
+/* ---------- Moldura ---------- */
+.frame {
+  position: absolute;
+  inset: clamp(12px, 2.2vw, 32px);
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(184, 154, 106, .22);
+}
+
+.frame i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gold);
+}
+
+.frame i:nth-child(1) { top: -4px;    left: -4px;  border-right: 0; border-bottom: 0; }
+.frame i:nth-child(2) { top: -4px;    right: -4px; border-left: 0;  border-bottom: 0; }
+.frame i:nth-child(3) { bottom: -4px; left: -4px;  border-right: 0; border-top: 0; }
+.frame i:nth-child(4) { bottom: -4px; right: -4px; border-left: 0;  border-top: 0; }
+
+/* ---------- Ornamento ---------- */
+.ornament {
+  display: block;
+  width: 150px;
+  height: 14px;
+  margin: clamp(1.2rem, 3vh, 2rem) auto 0;
+  color: var(--gold);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  --bg: transparent;
+  --fg: var(--wine);
+  --fill: var(--wine);
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7em;
+  padding: 1.05em 1.9em;
+  overflow: hidden;
+  border: 1px solid var(--wine);
+  border-radius: 100px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: .72rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .55s var(--ease);
+}
+
+/* Preenchimento que sobe no hover */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--fill);
+  transform: translateY(101%);
+  transition: transform .55s var(--ease);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: var(--paper);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: translateY(0);
+}
+
+/* Texto que rola para uma segunda cópia no hover */
+.btn .t {
+  display: inline-block;
+  height: 1.25em;
+  overflow: hidden;
+  line-height: 1.25em;
+}
+
+.btn .t span {
+  display: block;
+  transition: transform .55s var(--ease);
+}
+
+.btn .t span::after {
+  content: attr(data-t);
+  display: block;
+}
+
+.btn:hover .t span,
+.btn:focus-visible .t span {
+  transform: translateY(-50%);
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.btn--solid {
+  --bg: var(--wine);
+  --fg: var(--paper);
+  --fill: var(--wine-deep);
+}
+
+/* ---------- Navegação lateral ---------- */
+.pnav {
+  position: fixed;
+  top: 50%;
+  right: clamp(14px, 2vw, 30px);
+  z-index: 50;
+  transform: translate(160%, -50%);
+  transition: transform .7s var(--ease);
+}
+
+.pnav.on {
+  transform: translate(0, -50%);
+}
+
+.pnav ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(253, 249, 243, .75);
+  backdrop-filter: blur(8px);
+}
+
+.pnav a {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 30px;
+  font-family: var(--sans);
+  font-size: .56rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition: color .5s;
+}
+
+.pnav a.active {
+  color: var(--paper);
+}
+
+.pnav-ind {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  height: 30px;
+  border-radius: 30px;
+  background: var(--wine);
+  transition: top .6s var(--ease);
+}
+
+/* ---------- Botão flutuante "Confirmar presença" ---------- */
+.fab {
+  position: fixed;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 60;
+  transform: translate(-50%, 180%);
+  transition: transform .7s var(--ease);
+  box-shadow: 0 18px 40px -18px rgba(134, 72, 65, .6);
+}
+
+.fab.on {
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
+  }
+}
