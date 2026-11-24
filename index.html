@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lina Rosa · 85 anos</title>
+<meta name="description" content="Niedja, Gabriela e Fernanda convidam para celebrar os 85 anos de Lina Rosa. 14 de dezembro de 2026, às 19h30, no Terraço Morinda — São Luís, MA.">
+<meta property="og:title" content="Lina Rosa · 85 anos">
+<meta property="og:description" content="14 de dezembro de 2026 · 19h30 · Terraço Morinda, São Luís – MA. Confirme sua presença.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f9f2e8">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f9f2e8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' text-anchor='middle' fill='%23c4675f'%3ELR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/buque-b.webp">
+<link rel="preload" as="image" href="assets/buque-a.webp">
+
+<style>
+:root{
+  --cream:#f9f2e8;
+  --paper:#fdf9f3;
+  --rose:#c4675f;
+  --rose-soft:#e8b7ae;
+  --wine:#864841;
+  --olive:#5d6442;
+  --ink:#4b4839;
+  --ink-soft:#7a7461;
+  --gold:#b89a6a;
+  --line:rgba(184,154,106,.45);
+  --ease:cubic-bezier(.7,.02,.2,.98);
+  --script:"Pinyon Script", "Snell Roundhand", cursive;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Jost", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--cream);-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--serif);font-size:clamp(17px,1.15vw + 10px,21px);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.is-loading{overflow:hidden;height:100vh}
+::selection{background:var(--rose-soft);color:var(--wine)}
+::-webkit-scrollbar{width:3px;background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:10px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ---------- grão de papel ---------- */
+.grain{
+  position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .25 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite;mix-blend-mode:multiply;
+}
+@keyframes grain{
+  0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}
+  60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}
+}
+
+/* ---------- utilidades de texto ---------- */
+.eyebrow{
+  font-family:var(--sans);font-weight:400;font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--olive);
+}
+.w{display:inline-block;white-space:nowrap}
+.c{display:inline-block;white-space:pre;will-change:transform}
+.mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.06em .02em;margin:-.06em -.02em}
+.mask>span{display:inline-block}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:100;pointer-events:none}
+.loader-panels{position:absolute;inset:0;display:flex}
+.loader-panel{flex:1;height:100%;background:var(--paper);margin-right:-1px}
+.loader-panel:nth-child(even){background:#fbf4ea}
+.loader-inner{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.loader-count{
+  font-family:var(--serif);font-weight:300;font-style:italic;color:var(--rose);
+  font-size:clamp(6rem,22vw,15rem);line-height:.9;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;
+}
+.loader-label{margin-top:1.4rem}
+.loader-bar{width:min(220px,50vw);height:1px;background:var(--line);margin:1.4rem auto 0;position:relative;overflow:hidden}
+.loader-bar i{position:absolute;inset:0;background:var(--rose);transform:scaleX(0);transform-origin:left}
+
+/* ---------- florais ---------- */
+.flora{position:absolute;pointer-events:none;mix-blend-mode:multiply;will-change:transform}
+.flora img{width:100%;height:auto}
+.flora--tl{top:-2vw;left:-6vw;width:clamp(300px,46vw,760px);
+  -webkit-mask-image:radial-gradient(ellipse 75% 75% at 25% 25%,#000 55%,transparent 100%);
+          mask-image:radial-gradient(ellipse 75% 75% at 25% 25%,#000 55%,transparent 100%)}
+.flora--br{bottom:-3vw;right:-5vw;width:clamp(280px,42vw,700px);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 70% 70%,#000 50%,transparent 100%);
+          mask-image:radial-gradient(ellipse 80% 80% at 70% 70%,#000 50%,transparent 100%)}
+
+/* ---------- moldura ---------- */
+.frame{position:absolute;inset:clamp(12px,2.2vw,32px);border:1px solid var(--line);pointer-events:none}
+.frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(184,154,106,.22)}
+.frame i{position:absolute;width:18px;height:18px;border:1px solid var(--gold)}
+.frame i:nth-child(1){top:-4px;left:-4px;border-right:0;border-bottom:0}
+.frame i:nth-child(2){top:-4px;right:-4px;border-left:0;border-bottom:0}
+.frame i:nth-child(3){bottom:-4px;left:-4px;border-right:0;border-top:0}
+.frame i:nth-child(4){bottom:-4px;right:-4px;border-left:0;border-top:0}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:12vh 20px}
+#petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:980px}
+.hero .eyebrow{display:block;margin-bottom:clamp(1rem,3vh,2rem);min-height:1.2em}
+.name{
+  font-family:var(--script);font-weight:400;color:var(--rose);
+  font-size:clamp(4.6rem,15vw,12.5rem);line-height:1;letter-spacing:.005em;
+  padding:0 .15em;
+}
+.name .c{transform-origin:50% 100%}
+.age{display:flex;justify-content:center;align-items:baseline;gap:.25em;margin-top:-.15em;color:var(--olive)}
+.age-num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(3.2rem,8vw,6.2rem);line-height:1}
+.age-txt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:1}
+.hero-hosts{margin-top:clamp(1.4rem,4vh,2.6rem)}
+.hosts-names{font-family:var(--serif);font-weight:500;color:var(--wine);font-size:clamp(1.35rem,2.6vw,2rem);letter-spacing:.01em;min-height:1.3em}
+.hosts-line{font-style:italic;color:var(--ink);font-size:clamp(1.15rem,2vw,1.5rem);min-height:2.6em}
+.ornament{display:block;margin:clamp(1.2rem,3vh,2rem) auto 0;width:150px;height:14px;color:var(--gold)}
+
+.scroll-cue{position:absolute;bottom:clamp(28px,6vh,60px);left:50%;transform:translateX(-50%);z-index:3;text-align:center}
+.scroll-cue .eyebrow{font-size:.6rem;color:var(--ink-soft)}
+.scroll-line{width:1px;height:46px;margin:12px auto 0;background:var(--line);position:relative;overflow:hidden}
+.scroll-line::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:50%;background:var(--rose);animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{0%{top:-50%}100%{top:100%}}
+
+/* ---------- seções ---------- */
+section{position:relative}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+.tribute{padding:clamp(110px,22vh,220px) 0}
+.tribute .eyebrow{text-align:center;display:block;margin-bottom:2.2rem}
+.tribute-text{
+  font-family:var(--serif);font-weight:400;color:var(--wine);text-align:center;
+  font-size:clamp(1.7rem,4.2vw,3.5rem);line-height:1.22;max-width:21em;margin-inline:auto;letter-spacing:-.005em;
+}
+.tribute-text em{font-family:var(--script);font-style:normal;color:var(--rose);font-size:1.25em;line-height:.8}
+.tribute-sign{display:block;text-align:center;margin-top:2.4rem;color:var(--ink-soft);font-style:italic}
+
+/* data */
+.date{padding:clamp(70px,14vh,150px) 0 clamp(90px,16vh,170px);text-align:center}
+.date-big{
+  display:flex;justify-content:center;align-items:center;gap:clamp(.6rem,3vw,2.6rem);
+  font-family:var(--serif);font-weight:300;color:var(--wine);
+  font-size:clamp(4.2rem,15vw,12rem);line-height:1;font-variant-numeric:lining-nums;margin:1.6rem 0 1.2rem;
+}
+.date-big .dot{width:clamp(6px,1vw,10px);height:clamp(6px,1vw,10px);border-radius:50%;background:var(--gold);flex:none}
+.date-sub{font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--ink)}
+.date-sub b{font-weight:500;font-style:normal;color:var(--olive)}
+
+.countdown{display:flex;justify-content:center;gap:clamp(14px,4vw,56px);margin-top:clamp(2.6rem,7vh,4.4rem)}
+.cd{min-width:clamp(62px,13vw,120px)}
+.cd-num{
+  font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;color:var(--rose);
+  font-variant-numeric:lining-nums tabular-nums;display:flex;justify-content:center;overflow:hidden;height:1.05em;
+}
+.cd-num span{display:inline-block}
+.cd-lbl{margin-top:.8rem;font-size:.58rem}
+.cd-sep{align-self:flex-start;width:1px;height:clamp(2.2rem,6vw,4.2rem);background:var(--line)}
+.cal-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:clamp(2.4rem,6vh,3.6rem)}
+
+/* botões */
+.btn{
+  --bg:transparent;--fg:var(--wine);
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.7em;
+  padding:1.05em 1.9em;border:1px solid var(--wine);border-radius:100px;overflow:hidden;isolation:isolate;
+  font-family:var(--sans);font-weight:400;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--fg);background:var(--bg);text-decoration:none;transition:color .55s var(--ease);
+}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--wine);border-radius:inherit;
+  transform:translateY(101%);transition:transform .55s var(--ease);
+}
+.btn:hover,.btn:focus-visible{color:var(--paper)}
+.btn:hover::before,.btn:focus-visible::before{transform:translateY(0)}
+.btn .t{display:inline-block;overflow:hidden;height:1.25em;line-height:1.25em}
+.btn .t span{display:block;transition:transform .55s var(--ease)}
+.btn .t span::after{content:attr(data-t);display:block}
+.btn:hover .t span,.btn:focus-visible .t span{transform:translateY(-50%)}
+.btn--solid{--bg:var(--wine);--fg:var(--paper)}
+.btn--solid::before{background:#5e302b}
+.btn svg{width:14px;height:14px;flex:none}
+:focus-visible{outline:1px solid var(--rose);outline-offset:4px}
+
+/* local */
+.place{padding:clamp(90px,16vh,170px) 0;overflow:hidden}
+.place-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,90px);align-items:center}
+.place-title{font-family:var(--serif);font-weight:400;color:var(--wine);font-size:clamp(2.9rem,7.4vw,6.4rem);line-height:.98;margin:1.2rem 0 1.4rem;letter-spacing:-.01em}
+.place-title em{display:block;font-family:var(--script);font-style:normal;color:var(--rose);font-size:.62em;line-height:1.3;margin-top:.15em}
+.place-addr{font-size:clamp(1.15rem,1.7vw,1.4rem);color:var(--ink);line-height:1.5}
+.place-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem}
+.place-art{position:relative;aspect-ratio:4/5;border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--paper);border:1px solid var(--line)}
+.place-art .flora{position:absolute;inset:-8% 0;-webkit-mask-image:none;mask-image:none}
+.place-art .flora img{width:100%;height:100%;object-fit:cover;object-position:18% 30%}
+.place-art::after{content:"";position:absolute;inset:10px;border:1px solid rgba(184,154,106,.35);border-radius:999px 999px 12px 12px;pointer-events:none}
+.place-art .stamp{
+  position:absolute;left:50%;bottom:9%;transform:translateX(-50%);z-index:2;text-align:center;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);
+  background:rgba(253,249,243,.86);padding:.9em 1.4em;border-radius:100px;white-space:nowrap;backdrop-filter:blur(4px);
+}
+
+/* rsvp */
+.rsvp{padding:clamp(90px,16vh,170px) 0 clamp(100px,18vh,190px)}
+.card{
+  position:relative;width:min(720px,100%);margin-inline:auto;background:var(--paper);
+  padding:clamp(36px,6vw,72px) clamp(22px,6vw,72px);border:1px solid var(--line);
+  box-shadow:0 40px 80px -50px rgba(134,72,65,.35);
+}
+.card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(184,154,106,.25);pointer-events:none}
+.card-head{text-align:center;margin-bottom:clamp(2rem,5vh,3rem)}
+.card-title{font-family:var(--script);color:var(--rose);font-size:clamp(3.2rem,8vw,5.4rem);line-height:1.1;font-weight:400}
+.card-lead{font-style:italic;color:var(--ink-soft);margin-top:.4rem}
+
+.field{margin-bottom:1.7rem}
+.field>label,.field>.lbl{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--olive);margin-bottom:.7rem}
+.input{
+  width:100%;font:inherit;font-size:1.25rem;color:var(--ink);background:transparent;
+  border:0;border-bottom:1px solid var(--line);padding:.35em 0;outline:none;border-radius:0;transition:border-color .4s;
+}
+.input:focus{border-color:var(--rose)}
+textarea.input{resize:vertical;min-height:3.2em;line-height:1.45}
+.input::placeholder{color:#b3aa98;font-style:italic}
+.err{display:block;height:0;overflow:hidden;font-family:var(--sans);font-size:.72rem;color:#a2453d;margin-top:.5rem;transition:height .3s}
+.field.invalid .err{height:1.2em}
+.field.invalid .input{border-color:#a2453d}
+
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{
+  display:flex;align-items:center;justify-content:center;gap:.6em;text-align:center;
+  border:1px solid var(--line);padding:1em .8em;cursor:pointer;font-size:1.08rem;line-height:1.25;
+  transition:border-color .4s,background .4s,color .4s;min-height:64px;
+}
+.choice label:hover{border-color:var(--rose)}
+.choice input:checked+label{border-color:var(--wine);background:var(--wine);color:var(--paper)}
+.choice input:focus-visible+label{outline:1px solid var(--rose);outline-offset:3px}
+
+.guests{overflow:hidden;transition:height .6s var(--ease),opacity .4s}
+.stepper{display:flex;align-items:center;gap:1.2rem}
+.stepper button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);font-size:1.4rem;line-height:1;display:grid;place-items:center;transition:border-color .3s,background .3s,color .3s;color:var(--wine)}
+.stepper button:hover{border-color:var(--wine);background:var(--wine);color:var(--paper)}
+.stepper output{font-size:2.2rem;min-width:1.6em;text-align:center;color:var(--wine);font-variant-numeric:lining-nums tabular-nums;line-height:1}
+.stepper small{font-style:italic;color:var(--ink-soft);font-size:1rem}
+
+.submit{width:100%;margin-top:.6rem;padding:1.35em 1.9em}
+.note{display:flex;gap:.6em;justify-content:center;align-items:center;margin-top:1.2rem;font-size:.95rem;font-style:italic;color:var(--ink-soft);text-align:center}
+.note svg{width:15px;height:15px;flex:none;color:var(--olive)}
+
+.thanks{display:none;text-align:center;padding:1rem 0}
+.thanks.show{display:block}
+.thanks .card-title{font-size:clamp(3rem,8vw,5rem)}
+.thanks p{font-style:italic;color:var(--ink);max-width:26em;margin:.6rem auto 0}
+.thanks .btn{margin-top:1.8rem}
+.thanks-again{display:block;margin:1.2rem auto 0;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+
+/* rodapé */
+.finale{position:relative;min-height:92svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px 20px}
+.finale .name{font-size:clamp(4.4rem,17vw,14rem)}
+.finale-sign{margin-top:1.4rem;font-style:italic;color:var(--ink)}
+.finale-sign b{display:block;font-style:normal;font-weight:500;color:var(--wine);font-size:1.25em;margin-top:.2rem}
+.finale-meta{margin-top:2.6rem}
+
+/* navegação lateral (como a progress-nav do site) */
+.pnav{position:fixed;right:clamp(14px,2vw,30px);top:50%;transform:translate(160%,-50%);z-index:50;transition:transform .7s var(--ease)}
+.pnav.on{transform:translate(0,-50%)}
+.pnav ul{list-style:none;position:relative;display:flex;flex-direction:column;gap:4px;padding:6px;border-radius:30px;background:rgba(253,249,243,.75);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.pnav a{position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-end;height:30px;padding:0 12px;border-radius:30px;text-decoration:none;font-family:var(--sans);font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);transition:color .5s}
+.pnav a.active{color:var(--paper)}
+.pnav-ind{position:absolute;left:6px;right:6px;height:30px;border-radius:30px;background:var(--wine);transition:top .6s var(--ease);top:6px}
+
+/* botão flutuante */
+.fab{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translate(-50%,180%);z-index:60;transition:transform .7s var(--ease);box-shadow:0 18px 40px -18px rgba(134,72,65,.6)}
+.fab.on{transform:translate(-50%,0)}
+
+@media (max-width:900px){
+  .pnav{display:none}
+  .place-grid{grid-template-columns:1fr}
+  .place-art{max-width:420px;width:100%;margin-inline:auto;order:-1}
+  .place-copy{text-align:center}
+  .place-btns{justify-content:center}
+}
+@media (max-width:560px){
+  .flora--tl{width:110vw;left:-30vw;top:-8vw}
+  .flora--br{width:105vw;right:-38vw;bottom:-6vw}
+  .choice{grid-template-columns:1fr}
+  .cd-sep{display:none}
+  .countdown{gap:6px}
+  .cd{min-width:0;flex:1}
+  .frame{inset:10px}
+  .btn{letter-spacing:.2em}
+  .eyebrow{letter-spacing:.26em}
+}
+.btn{white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+  .grain,.scroll-line::after{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body class="is-loading">
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- LOADER: contador de 0 a 85 + painéis que sobem em ordem aleatória -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-panels">
+    <div class="loader-panel"></div><div class="loader-panel"></div><div class="loader-panel"></div>
+    <div class="loader-panel"></div><div class="loader-panel"></div><div class="loader-panel"></div>
+  </div>
+  <div class="loader-inner">
+    <div>
+      <div class="loader-count">0</div>
+      <div class="loader-bar"><i></i></div>
+      <div class="eyebrow loader-label">anos de história</div>
+    </div>
+  </div>
+</div>
+
+<nav class="pnav" aria-label="Seções">
+  <ul>
+    <span class="pnav-ind"></span>
+    <li><a href="#convite" data-nav>Convite</a></li>
+    <li><a href="#data" data-nav>Data</a></li>
+    <li><a href="#local" data-nav>Local</a></li>
+    <li><a href="#presenca" data-nav>Presença</a></li>
+  </ul>
+</nav>
+
+<a class="btn btn--solid fab" href="#presenca" data-fab><span class="t"><span data-t="Confirmar presença">Confirmar presença</span></span></a>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="convite" data-sec>
+    <div class="frame"><i></i><i></i><i></i><i></i></div>
+    <div class="flora flora--tl" data-flora data-speed="-0.18"><img src="assets/buque-b.webp" alt="" width="1016" height="571"></div>
+    <div class="flora flora--br" data-flora data-speed="0.14"><img src="assets/buque-a.webp" alt="" width="785" height="437"></div>
+    <canvas id="petals" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <span class="eyebrow" data-scramble="Você está convidado para celebrar"></span>
+      <h1 class="name" data-hero-name aria-label="Lina Rosa">Lina Rosa</h1>
+      <div class="age" aria-label="85 anos">
+        <span class="age-num" data-hero-age>85</span>
+        <span class="age-txt" data-hero-age2>anos</span>
+      </div>
+      <div class="hero-hosts">
+        <p class="hosts-names" data-scramble="Niedja, Gabriela e Fernanda"></p>
+        <p class="hosts-line" data-scramble="convidam para celebrar a vida de sua querida mãe."></p>
+      </div>
+      <svg class="ornament" viewBox="0 0 150 14" fill="none" aria-hidden="true">
+        <path data-draw d="M2 7 H62" stroke="currentColor" stroke-width=".8"/>
+        <path data-draw d="M148 7 H88" stroke="currentColor" stroke-width=".8"/>
+        <path data-draw d="M75 1 L81 7 L75 13 L69 7 Z" stroke="currentColor" stroke-width=".8"/>
+      </svg>
+    </div>
+
+    <div class="scroll-cue"><span class="eyebrow">role com carinho</span><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- HOMENAGEM: texto que acende conforme a rolagem -->
+  <section class="tribute">
+    <div class="wrap">
+      <span class="eyebrow">Uma vida para celebrar</span>
+      <p class="tribute-text" data-light>Oitenta e cinco anos de histórias, de mesa farta, de colo e de conselhos. Uma vida inteira que floresceu em filhas, netos e amigos — e que merece ser celebrada ao lado de quem ela <em>ama.</em></p>
+      <span class="tribute-sign">E você faz parte dessa história.</span>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section class="date" id="data" data-sec>
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>Guarde esta data</span>
+      <div class="date-big" aria-label="14 de dezembro de 2026">
+        <span data-rise>14</span><span class="dot"></span><span data-rise>12</span><span class="dot"></span><span data-rise>2026</span>
+      </div>
+      <p class="date-sub" data-reveal>Segunda-feira, 14 de dezembro · <b>às 19h30</b></p>
+
+      <div class="countdown" aria-live="off" data-reveal>
+        <div class="cd"><div class="cd-num" data-cd="d">000</div><div class="eyebrow cd-lbl">dias</div></div>
+        <div class="cd-sep"></div>
+        <div class="cd"><div class="cd-num" data-cd="h">00</div><div class="eyebrow cd-lbl">horas</div></div>
+        <div class="cd-sep"></div>
+        <div class="cd"><div class="cd-num" data-cd="m">00</div><div class="eyebrow cd-lbl">minutos</div></div>
+        <div class="cd-sep"></div>
+        <div class="cd"><div class="cd-num" data-cd="s">00</div><div class="eyebrow cd-lbl">segundos</div></div>
+      </div>
+
+      <div class="cal-btns" data-reveal>
+        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Anivers%C3%A1rio%20de%2085%20anos%20%E2%80%94%20Lina%20Rosa&dates=20261214T223000Z/20261215T023000Z&location=Terra%C3%A7o%20Morinda%2C%20Avenida%20Avic%C3%AAnia%2C%2017%2C%20Calhau%2C%20S%C3%A3o%20Lu%C3%ADs%20-%20MA&details=Niedja%2C%20Gabriela%20e%20Fernanda%20convidam%20para%20celebrar%20a%20vida%20de%20sua%20querida%20m%C3%A3e.">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="3" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1v3.5M11 1v3.5"/></svg>
+          <span class="t"><span data-t="Google Agenda">Google Agenda</span></span>
+        </a>
+        <button class="btn" type="button" data-ics>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 1.5v9M4.5 7 8 10.5 11.5 7M2 12.5v2h12v-2"/></svg>
+          <span class="t"><span data-t="Salvar no celular">Salvar no celular</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL -->
+  <section class="place" id="local" data-sec>
+    <div class="wrap place-grid">
+      <div class="place-copy">
+        <span class="eyebrow" data-reveal>Onde vamos nos encontrar</span>
+        <h2 class="place-title"><span data-rise-words>Terraço Morinda</span><em data-reveal>em São Luís</em></h2>
+        <p class="place-addr" data-reveal>Avenida Avicênia, nº 17, Calhau<br>São Luís – MA</p>
+        <div class="place-btns" data-reveal>
+          <a class="btn btn--solid" target="_blank" rel="noopener" href="https://www.waze.com/pt-BR/live-map/directions/br/ma/casa-morinda?to=place.ChIJ71W3NLWN9gcRni7vuIilRuY">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15Z"/><circle cx="8" cy="6.5" r="1.8"/></svg>
+            <span class="t"><span data-t="Abrir no Waze">Abrir no Waze</span></span>
+          </a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Terra%C3%A7o%20Morinda%2C%20Avenida%20Avic%C3%AAnia%2017%2C%20Calhau%2C%20S%C3%A3o%20Lu%C3%ADs%20-%20MA">
+            <span class="t"><span data-t="Google Maps">Google Maps</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="place-art" data-reveal>
+        <div class="flora" data-flora data-speed="-0.1"><img src="assets/buque-b.webp" alt="" width="1016" height="571" loading="lazy"></div>
+        <span class="stamp">14.12 · 19h30</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMAÇÃO DE PRESENÇA -->
+  <section class="rsvp" id="presenca" data-sec>
+    <div class="wrap">
+      <div class="card" data-reveal>
+        <form id="rsvp-form" novalidate>
+          <div class="card-head">
+            <span class="eyebrow">Confirmação de presença</span>
+            <h2 class="card-title">Você vem?</h2>
+            <p class="card-lead">Sua resposta nos ajuda a preparar tudo com carinho.</p>
+          </div>
+
+          <div class="field" data-field="nome">
+            <label for="nome">Seu nome</label>
+            <input class="input" id="nome" name="nome" autocomplete="name" placeholder="Nome e sobrenome" required>
+            <span class="err">Conte pra gente quem é você.</span>
+          </div>
+
+          <div class="field" data-field="vai">
+            <span class="lbl" id="vai-lbl">Poderá comparecer?</span>
+            <div class="choice" role="radiogroup" aria-labelledby="vai-lbl">
+              <input type="radio" name="vai" id="vai-sim" value="sim" checked><label for="vai-sim">Sim, estarei lá</label>
+              <input type="radio" name="vai" id="vai-nao" value="nao"><label for="vai-nao">Infelizmente, não poderei</label>
+            </div>
+          </div>
+
+          <div class="guests" data-guests>
+            <div class="field">
+              <span class="lbl" id="qtd-lbl">Quantas pessoas, contando com você?</span>
+              <div class="stepper" aria-labelledby="qtd-lbl">
+                <button type="button" data-step="-1" aria-label="Diminuir">−</button>
+                <output id="qtd" aria-live="polite">1</output>
+                <button type="button" data-step="1" aria-label="Aumentar">+</button>
+                <small data-qtd-txt>pessoa</small>
+              </div>
+            </div>
+            <div class="field">
+              <label for="acomp">Nome dos acompanhantes <span style="text-transform:none;letter-spacing:0;font-family:var(--serif);font-style:italic">(opcional)</span></label>
+              <input class="input" id="acomp" name="acomp" placeholder="Ex.: Maria e João">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="recado">Um recado para a aniversariante <span style="text-transform:none;letter-spacing:0;font-family:var(--serif);font-style:italic">(opcional)</span></label>
+            <textarea class="input" id="recado" name="recado" rows="2" placeholder="Deixe um carinho para a Lina…"></textarea>
+          </div>
+
+          <button class="btn btn--solid submit" type="submit">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 .9A7 7 0 0 0 2 11.6L1 15l3.5-.9A7 7 0 1 0 8 .9Zm0 12.8a5.8 5.8 0 0 1-3-.8l-.2-.1-2 .5.5-2-.1-.2A5.8 5.8 0 1 1 8 13.7Zm3.2-4.3c-.2-.1-1-.5-1.2-.5s-.3-.1-.4.1l-.6.7c-.1.1-.2.1-.4 0a4.7 4.7 0 0 1-2.3-2c-.2-.3.2-.3.5-1 .1-.1 0-.2 0-.3l-.5-1.3c-.2-.3-.3-.3-.4-.3h-.4a.7.7 0 0 0-.5.3 2.2 2.2 0 0 0-.7 1.6 3.8 3.8 0 0 0 .8 2 8.6 8.6 0 0 0 3.3 2.9c1.2.5 1.7.6 2.3.5a2 2 0 0 0 1.3-.9 1.6 1.6 0 0 0 .1-.9c0-.1-.2-.2-.4-.3Z"/></svg>
+            <span class="t"><span data-t="Enviar confirmação">Enviar confirmação</span></span>
+          </button>
+          <p class="note">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6.5"/><path d="M8 7.2v4M8 4.8v.1"/></svg>
+            Sua resposta abre no WhatsApp da família, já escrita — é só tocar em enviar.
+          </p>
+        </form>
+
+        <div class="thanks" data-thanks aria-live="polite">
+          <span class="eyebrow">Recebemos com carinho</span>
+          <h2 class="card-title" data-thanks-title>Obrigado!</h2>
+          <p data-thanks-msg></p>
+          <a class="btn btn--solid" data-thanks-wa target="_blank" rel="noopener" href="https://wa.me/5598988220451"><span class="t"><span data-t="Abrir WhatsApp de novo">Abrir WhatsApp de novo</span></span></a>
+          <button class="thanks-again" type="button" data-again>Editar resposta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="finale">
+    <div class="flora flora--br" data-flora data-speed="0.12" style="right:auto;left:-6vw;transform:scaleX(-1)"><img src="assets/buque-a.webp" alt="" width="785" height="437" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">Com todo o amor</span>
+      <p class="name" data-finale-name aria-label="Lina Rosa">Lina Rosa</p>
+      <p class="finale-sign">Esperamos você para brindar a vida da nossa mãe,<b>Niedja, Gabriela e Fernanda</b></p>
+      <p class="eyebrow finale-meta">14.12.2026 · 19h30 · Terraço Morinda</p>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+<script>
+(() => {
+  const WA = "5598988220451";
+  const EVENT = new Date("2026-12-14T19:30:00-03:00");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const hasGsap = typeof gsap !== "undefined";
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) scrollTo(0, 0);
+
+  /* ---------- divide texto em palavras/letras (como o SplitText do site) ---------- */
+  function split(el, { mask = false } = {}) {
+    const chars = [];
+    const walk = (node, out) => {
+      [...node.childNodes].forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { out.appendChild(document.createTextNode(" ")); return; }
+            const w = document.createElement("span"); w.className = "w";
+            [...part].forEach(ch => {
+              const c = document.createElement("span"); c.className = "c"; c.textContent = ch;
+              if (mask) { const m = document.createElement("span"); m.className = "mask"; m.appendChild(c); w.appendChild(m); }
+              else w.appendChild(c);
+              chars.push(c);
+            });
+            out.appendChild(w);
+          });
+        } else if (n.nodeType === 1) {
+          const clone = n.cloneNode(false); walk(n, clone); out.appendChild(clone);
+        }
+      });
+    };
+    const frag = document.createElement("div"); walk(el, frag);
+    el.innerHTML = ""; [...frag.childNodes].forEach(n => el.appendChild(n));
+    return chars;
+  }
+
+  /* ---------- contagem regressiva ---------- */
+  const cdEls = Object.fromEntries($$("[data-cd]").map(e => [e.dataset.cd, e]));
+  const last = {};
+  function setCd(key, val) {
+    const el = cdEls[key]; if (!el || last[key] === val) return;
+    const prev = last[key]; last[key] = val;
+    el.innerHTML = [...val].map((d, i) => `<span>${d}</span>`).join("");
+    if (hasGsap && prev !== undefined && !reduce) {
+      [...el.children].forEach((s, i) => { if (prev[i] !== val[i]) gsap.from(s, { yPercent: 100, duration: .6, ease: "expo.out" }); });
+    }
+  }
+  function tick() {
+    let ms = Math.max(0, EVENT - Date.now());
+    const d = Math.floor(ms / 864e5); ms -= d * 864e5;
+    const h = Math.floor(ms / 36e5); ms -= h * 36e5;
+    const m = Math.floor(ms / 6e4); ms -= m * 6e4;
+    const s = Math.floor(ms / 1e3);
+    setCd("d", String(d).padStart(2, "0")); setCd("h", String(h).padStart(2, "0"));
+    setCd("m", String(m).padStart(2, "0")); setCd("s", String(s).padStart(2, "0"));
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- arquivo de agenda (.ics) ---------- */
+  $("[data-ics]").addEventListener("click", () => {
+    const ics = [
+      "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Lina Rosa 85//PT-BR","CALSCALE:GREGORIAN","BEGIN:VEVENT",
+      "UID:lina-rosa-85-20261214@convite","DTSTAMP:20261101T120000Z",
+      "DTSTART:20261214T223000Z","DTEND:20261215T023000Z",
+      "SUMMARY:Aniversário de 85 anos — Lina Rosa",
+      "LOCATION:Terraço Morinda\\, Avenida Avicênia\\, 17\\, Calhau\\, São Luís - MA",
+      "DESCRIPTION:Niedja\\, Gabriela e Fernanda convidam para celebrar a vida de sua querida mãe.",
+      "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:Amanhã: 85 anos da Lina Rosa","END:VALARM",
+      "END:VEVENT","END:VCALENDAR"].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+    a.download = "Lina-Rosa-85-anos.ics"; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  });
+
+  /* ---------- RSVP via WhatsApp ---------- */
+  const form = $("#rsvp-form"), thanks = $("[data-thanks]"), guests = $("[data-guests]");
+  let qtd = 1;
+  const qtdOut = $("#qtd"), qtdTxt = $("[data-qtd-txt]");
+  $$("[data-step]").forEach(b => b.addEventListener("click", () => {
+    qtd = Math.min(15, Math.max(1, qtd + Number(b.dataset.step)));
+    qtdOut.textContent = qtd; qtdTxt.textContent = qtd === 1 ? "pessoa" : "pessoas";
+    if (hasGsap && !reduce) gsap.fromTo(qtdOut, { yPercent: 40 * Math.sign(b.dataset.step), opacity: 0 }, { yPercent: 0, opacity: 1, duration: .45, ease: "expo.out" });
+  }));
+  function syncGuests() {
+    const yes = form.vai.value === "sim";
+    guests.style.height = yes ? guests.scrollHeight + "px" : "0px";
+    guests.style.opacity = yes ? 1 : 0;
+    guests.setAttribute("aria-hidden", String(!yes));
+    setTimeout(() => typeof relayout === "function" && relayout(), 650);
+    $$("button,input", guests).forEach(el => el.tabIndex = yes ? 0 : -1);
+  }
+  $$('input[name="vai"]').forEach(r => r.addEventListener("change", syncGuests));
+  window.addEventListener("resize", () => { if (form.vai.value === "sim") guests.style.height = "auto", guests.style.height = guests.scrollHeight + "px"; });
+  syncGuests();
+
+  function buildMsg(d) {
+    const L = [];
+    if (d.vai) {
+      L.push("Olá! 🌸 Confirmo presença no aniversário de 85 anos da Lina Rosa.");
+      L.push("", `*Nome:* ${d.nome}`, `*Pessoas:* ${d.qtd}`);
+      if (d.acomp) L.push(`*Acompanhantes:* ${d.acomp}`);
+    } else {
+      L.push("Olá! 🌸 Infelizmente não poderei ir ao aniversário de 85 anos da Lina Rosa.");
+      L.push("", `*Nome:* ${d.nome}`);
+    }
+    if (d.recado) L.push("", `*Recado para a Lina:* ${d.recado}`);
+    L.push("", "14/12/2026 · 19h30 · Terraço Morinda");
+    return L.join("\n");
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const nomeF = $('[data-field="nome"]'), nome = form.nome.value.trim();
+    if (nome.length < 2) { nomeF.classList.add("invalid"); form.nome.focus(); return; }
+    nomeF.classList.remove("invalid");
+    const d = { nome, vai: form.vai.value === "sim", qtd, acomp: form.acomp.value.trim(), recado: form.recado.value.trim() };
+    const url = `https://wa.me/${WA}?text=${encodeURIComponent(buildMsg(d))}`;
+    window.open(url, "_blank", "noopener");
+    try { localStorage.setItem("lina85-rsvp", JSON.stringify(d)); } catch (_) {}
+    showThanks(d, url);
+  });
+  form.nome.addEventListener("input", () => $('[data-field="nome"]').classList.remove("invalid"));
+
+  function showThanks(d, url) {
+    const first = d.nome.split(/\s+/)[0];
+    $("[data-thanks-title]").textContent = d.vai ? `Até lá, ${first}!` : `Obrigado, ${first}`;
+    $("[data-thanks-msg]").textContent = d.vai
+      ? (d.qtd > 1 ? `Reservamos um lugar especial para vocês ${d.qtd}. Se o WhatsApp não abriu, toque no botão abaixo para enviar a confirmação.` : "Reservamos um lugar especial para você. Se o WhatsApp não abriu, toque no botão abaixo para enviar a confirmação.")
+      : "Sentiremos sua falta. Seu carinho chegará até ela. Se o WhatsApp não abriu, toque no botão abaixo.";
+    $("[data-thanks-wa]").href = url;
+    form.style.display = "none"; thanks.classList.add("show"); relayout();
+    if (hasGsap && !reduce) {
+      gsap.from(thanks.children, { y: 30, opacity: 0, stagger: .08, duration: 1, ease: "expo.out" });
+      burst();
+    }
+  }
+  $("[data-again]").addEventListener("click", () => {
+    thanks.classList.remove("show"); form.style.display = ""; syncGuests(); relayout();
+  });
+  function relayout() {
+    if (typeof ScrollTrigger !== "undefined") requestAnimationFrame(() => { window.lenis && lenis.resize(); ScrollTrigger.refresh(); });
+  }
+  // pré-preenche se a pessoa já respondeu neste aparelho
+  try {
+    const saved = JSON.parse(localStorage.getItem("lina85-rsvp") || "null");
+    if (saved && saved.nome) {
+      form.nome.value = saved.nome; form.acomp.value = saved.acomp || ""; form.recado.value = saved.recado || "";
+      form.vai.value = saved.vai ? "sim" : "nao"; qtd = saved.qtd || 1; qtdOut.textContent = qtd; qtdTxt.textContent = qtd === 1 ? "pessoa" : "pessoas";
+      syncGuests();
+    }
+  } catch (_) {}
+
+  /* ---------- pétalas ---------- */
+  const cv = $("#petals"), ctx = cv.getContext("2d");
+  let petals = [], W = 0, H = 0, dpr = 1, burstPetals = [];
+  const COLORS = ["#e8b7ae", "#f0c9c1", "#dca39a", "#f6e3dc", "#c9d0b4"];
+  function sizeCv() { dpr = Math.min(2, devicePixelRatio || 1); W = cv.offsetWidth; H = cv.offsetHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  function mkPetal(top) {
+    return { x: Math.random() * W, y: top ? Math.random() * H : -20, r: 5 + Math.random() * 7, vy: .25 + Math.random() * .55, vx: -.2 + Math.random() * .4,
+      a: Math.random() * 6.28, va: -.02 + Math.random() * .04, sway: Math.random() * 6.28, c: COLORS[Math.random() * COLORS.length | 0], o: .35 + Math.random() * .45 };
+  }
+  function drawPetal(p, c) {
+    c.save(); c.translate(p.x, p.y); c.rotate(p.a); c.scale(1, .55 + .45 * Math.sin(p.sway * 2));
+    c.globalAlpha = p.o; c.fillStyle = p.c; c.beginPath();
+    c.moveTo(0, -p.r); c.bezierCurveTo(p.r, -p.r * .6, p.r * .8, p.r * .7, 0, p.r); c.bezierCurveTo(-p.r * .8, p.r * .7, -p.r, -p.r * .6, 0, -p.r);
+    c.fill(); c.restore();
+  }
+  let heroVisible = true;
+  function loop() {
+    if (heroVisible) {
+      ctx.clearRect(0, 0, W, H);
+      petals.forEach(p => {
+        p.sway += .012; p.y += p.vy; p.x += p.vx + Math.sin(p.sway) * .35; p.a += p.va;
+        if (p.y > H + 20) Object.assign(p, mkPetal(false));
+        drawPetal(p, ctx);
+      });
+    }
+    requestAnimationFrame(loop);
+  }
+  if (!reduce) {
+    sizeCv(); petals = Array.from({ length: W < 600 ? 14 : 26 }, () => mkPetal(true));
+    addEventListener("resize", sizeCv); requestAnimationFrame(loop);
+    new IntersectionObserver(([e]) => heroVisible = e.isIntersecting).observe($(".hero"));
+  }
+
+  // chuva de pétalas ao confirmar
+  function burst() {
+    const card = $(".card"), c = document.createElement("canvas"), r = card.getBoundingClientRect();
+    Object.assign(c.style, { position: "absolute", inset: "0", width: "100%", height: "100%", pointerEvents: "none", zIndex: 3 });
+    card.appendChild(c); const g = c.getContext("2d"), w = r.width, h = r.height;
+    c.width = w * dpr; c.height = h * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const ps = Array.from({ length: 60 }, () => { const p = mkPetal(false); p.x = w / 2; p.y = h * .28; const ang = Math.random() * 6.28, sp = 2 + Math.random() * 5;
+      p.vx = Math.cos(ang) * sp; p.vy = Math.sin(ang) * sp - 3; p.o = .9; return p; });
+    let t = 0;
+    (function f() { g.clearRect(0, 0, w, h); t++;
+      ps.forEach(p => { p.vy += .09; p.vx *= .985; p.x += p.vx; p.y += p.vy; p.a += p.va * 4; p.sway += .05; p.o = Math.max(0, .9 - t / 140); drawPetal(p, g); });
+      if (t < 140) requestAnimationFrame(f); else c.remove(); })();
+  }
+
+  /* ---------- sem GSAP: mostra tudo e encerra ---------- */
+  const scr = $$("[data-scramble]");
+  if (!hasGsap || reduce) {
+    scr.forEach(el => el.textContent = el.dataset.scramble);
+    $(".loader").remove(); document.body.classList.remove("is-loading");
+    return;
+  }
+
+  /* ================= ANIMAÇÕES (GSAP) ================= */
+  gsap.registerPlugin(ScrollTrigger, CustomEase, ScrambleTextPlugin);
+  CustomEase.create("rm", "M0,0 C0.7,0.024 0.199,0.976 1,1 ");      // mesma curva do site
+  CustomEase.create("soft", "M0,0 C0.312,0.153 0.387,0.326 0.495,0.509 0.593,0.676 0.684,1.017 1,1 ");
+
+  // rolagem suave (Lenis)
+  let lenis = null;
+  if (typeof Lenis !== "undefined") {
+    lenis = new Lenis({ duration: 1.25, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    window.lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    lenis.stop();
+    $$('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+      const t = $(a.getAttribute("href")); if (!t) return; e.preventDefault(); lenis.scrollTo(t, { offset: 0, duration: 1.8 });
+    }));
+  }
+
+  // prepara letras
+  const nameChars = split($("[data-hero-name]"));
+  const ageChars = split($("[data-hero-age]"), { mask: true });
+  const age2Chars = split($("[data-hero-age2]"), { mask: true });
+  gsap.set(nameChars, { yPercent: 70, opacity: 0, rotate: 10, filter: "blur(10px)" });
+  gsap.set([...ageChars, ...age2Chars], { yPercent: 110 });
+  gsap.set(".hero .flora", { opacity: 0, scale: 1.08 });
+  gsap.set(".scroll-cue", { opacity: 0, y: 20 });
+  $$("[data-draw]").forEach(p => { const l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
+
+  /* ---------- loader: 0 → 85 ---------- */
+  const count = { v: 0 }, countEl = $(".loader-count");
+  const toTop = () => { if (location.hash) return; scrollTo(0, 0); lenis && lenis.scrollTo(0, { immediate: true, force: true }); };
+  toTop(); addEventListener("load", toTop);
+  const tl = gsap.timeline({ delay: .2 });
+  tl.to(count, { v: 85, duration: 2.1, ease: "power4.inOut", onUpdate: () => countEl.textContent = Math.round(count.v) }, 0)
+    .to(".loader-bar i", { scaleX: 1, duration: 2.1, ease: "power4.inOut" }, 0)
+    .add(toTop)
+    .to(".loader-inner", { yPercent: -30, opacity: 0, duration: .9, ease: "rm" }, "+=.25")
+    .to(".loader-panel", { yPercent: -101, duration: 1.2, ease: "rm", stagger: { amount: .3, from: "random" } }, "-=.55")
+    .add(() => { document.body.classList.remove("is-loading"); intro(); }, "-=1.05")
+    .add(() => $(".loader").remove());
+
+  /* ---------- entrada do hero ---------- */
+  function intro() {
+    const t = gsap.timeline();
+    t.to(".hero .flora", { opacity: 1, scale: 1, duration: 2.2, ease: "expo.out", stagger: .15 }, 0)
+     .to(nameChars, { yPercent: 0, opacity: 1, rotate: 0, filter: "blur(0px)", duration: 1.4, ease: "rm", stagger: .075 }, .1)
+     .to(ageChars, { yPercent: 0, duration: 1.1, ease: "rm", stagger: .09 }, .75)
+     .to(age2Chars, { yPercent: 0, duration: 1.1, ease: "rm", stagger: .06 }, .9)
+     .to(scr[0], { duration: 1.2, scrambleText: { text: scr[0].dataset.scramble, chars: "lowerCase", speed: .5, revealDelay: .2 } }, .2)
+     .to(scr[1], { duration: 1.3, scrambleText: { text: scr[1].dataset.scramble, chars: "lowerCase", speed: .5, revealDelay: .3 } }, 1.3)
+     .to(scr[2], { duration: 1.8, scrambleText: { text: scr[2].dataset.scramble, chars: " ", speed: .6 } }, 1.9)
+     .to("[data-draw]", { strokeDashoffset: 0, duration: 1.4, ease: "power3.inOut", stagger: .1 }, 2.3)
+     .to(".scroll-cue", { opacity: 1, y: 0, duration: 1, ease: "expo.out" }, 2.8)
+     .add(() => { lenis && lenis.start(); setupScroll(); }, 1.2);
+  }
+
+  /* ---------- efeitos de rolagem ---------- */
+  function setupScroll() {
+    // letras do nome sobem e giram ao sair (como o hero-char do site)
+    gsap.fromTo(nameChars, { yPercent: 0, rotate: 0 }, {
+      yPercent: -90, rotate: 8, opacity: 0, stagger: .05, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom 20%", scrub: true }
+    });
+    gsap.to([".age", ".hero-hosts", ".ornament", ".hero .eyebrow"], {
+      yPercent: -40, opacity: 0, ease: "none", stagger: .04,
+      scrollTrigger: { trigger: ".hero", start: "10% top", end: "bottom 30%", scrub: true }
+    });
+    gsap.to(".scroll-cue", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "top top", end: "15% top", scrub: true } });
+
+    // parallax nos florais
+    $$("[data-flora]").forEach(f => {
+      const sp = parseFloat(f.dataset.speed || 0);
+      gsap.fromTo(f, { y: () => -sp * innerHeight * .5 }, { y: () => sp * innerHeight * .5, ease: "none",
+        scrollTrigger: { trigger: f.closest("section"), start: "top bottom", end: "bottom top", scrub: true, invalidateOnRefresh: true } });
+    });
+
+    // texto que acende letra a letra
+    const lit = split($("[data-light]"));
+    gsap.from(lit, { opacity: .16, stagger: .4, ease: "none",
+      scrollTrigger: { trigger: ".tribute", start: "top 70%", end: "bottom 75%", scrub: .4 } });
+    gsap.from(".tribute .eyebrow, .tribute-sign", { opacity: 0, y: 20, duration: 1, ease: "expo.out", stagger: .2,
+      scrollTrigger: { trigger: ".tribute", start: "top 70%" } });
+
+    // números da data sobem com máscara
+    $$("[data-rise]").forEach((el, i) => {
+      const cs = split(el, { mask: true });
+      gsap.from(cs, { yPercent: 110, rotate: 6, duration: 1.3, ease: "rm", stagger: .06, delay: i * .12,
+        scrollTrigger: { trigger: ".date-big", start: "top 82%" } });
+    });
+    gsap.from(".date-big .dot", { scale: 0, duration: .8, ease: "back.out(3)", stagger: .15, delay: .5,
+      scrollTrigger: { trigger: ".date-big", start: "top 82%" } });
+
+    // palavras do local
+    $$("[data-rise-words]").forEach(el => {
+      const cs = split(el, { mask: true });
+      gsap.from(cs, { yPercent: 110, duration: 1.2, ease: "rm", stagger: .035,
+        scrollTrigger: { trigger: el, start: "top 85%" } });
+    });
+
+    // revelações genéricas
+    $$("[data-reveal]").forEach(el => {
+      gsap.from(el, { y: 40, opacity: 0, duration: 1.3, ease: "expo.out",
+        scrollTrigger: { trigger: el, start: "top 88%" } });
+    });
+
+    // arco do local abre como cortina
+    gsap.fromTo(".place-art", { clipPath: "inset(100% 0 0 0 round 999px 999px 18px 18px)" },
+      { clipPath: "inset(0% 0 0 0 round 999px 999px 18px 18px)", duration: 1.6, ease: "rm",
+        scrollTrigger: { trigger: ".place-art", start: "top 85%" } });
+
+    // final: nome volta a subir letra a letra
+    const fin = split($("[data-finale-name]"));
+    gsap.from(fin, { yPercent: 80, opacity: 0, rotate: 10, filter: "blur(8px)", duration: 1.4, ease: "rm", stagger: .07,
+      scrollTrigger: { trigger: ".finale", start: "top 65%" } });
+    gsap.from([".finale .eyebrow", ".finale-sign"], { opacity: 0, y: 24, duration: 1.2, ease: "expo.out", stagger: .15, delay: .6,
+      scrollTrigger: { trigger: ".finale", start: "top 65%" } });
+
+    // navegação lateral com indicador (como a progress-nav do site)
+    const nav = $(".pnav"), ind = $(".pnav-ind"), links = $$("[data-nav]");
+    const setActive = id => {
+      links.forEach(a => {
+        const on = a.getAttribute("href") === "#" + id; a.classList.toggle("active", on);
+        if (on) ind.style.top = a.offsetTop + "px";
+      });
+    };
+    $$("[data-sec]").forEach(s => ScrollTrigger.create({ trigger: s, start: "top 50%", end: "bottom 50%",
+      onToggle: self => self.isActive && setActive(s.id) }));
+    ScrollTrigger.create({ trigger: ".hero", start: "bottom 70%", end: "max",
+      onToggle: self => nav.classList.toggle("on", self.isActive) });
+
+    // botão flutuante: aparece depois do hero, some na seção de presença
+    const fab = $("[data-fab]");
+    const fabState = () => {
+      const past = scrollY > innerHeight * .8;
+      const r = $("#presenca").getBoundingClientRect(), f = $(".finale").getBoundingClientRect();
+      const inRsvp = r.top < innerHeight * .9 && f.top > innerHeight * .4 || f.top < innerHeight * .4;
+      fab.classList.toggle("on", past && !inRsvp);
+    };
+    ScrollTrigger.create({ start: 0, end: "max", onUpdate: fabState }); fabState();
+
+    ScrollTrigger.refresh();
+  }
+})();
+</script>
+</body>
+</html>
