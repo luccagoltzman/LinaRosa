@@ -44,7 +44,13 @@
   color: var(--rose);
 }
 
+/* Na fonte cursiva, partes das letras (a volta do "L", o pingo do "i")
+   desenham fora da caixa da letra. Quando a letra vira uma camada animada,
+   o Safari do iPhone corta tudo que fica fora da caixa. O padding aumenta
+   a caixa e a margem negativa devolve o espaçamento original. */
 .name .c {
+  padding: .3em .25em;
+  margin: -.3em -.25em;
   transform-origin: 50% 100%;
 }
 

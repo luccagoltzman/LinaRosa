@@ -71,7 +71,7 @@ function playIntro(hero, onReady) {
 
   gsap.timeline()
     .to(".hero .flora", { opacity: 1, scale: 1, duration: 2.2, ease: "expo.out", stagger: .15 }, 0)
-    .to(hero.name, { yPercent: 0, opacity: 1, rotate: 0, filter: "blur(0px)", duration: 1.4, ease: "rm", stagger: .075 }, .1)
+    .to(hero.name, { yPercent: 0, opacity: 1, rotate: 0, filter: "blur(0px)", duration: 1.4, ease: "rm", stagger: .075, clearProps: "filter" }, .1)
     .to(hero.age, { yPercent: 0, duration: 1.1, ease: "rm", stagger: .09 }, .75)
     .to(hero.ageText, { yPercent: 0, duration: 1.1, ease: "rm", stagger: .06 }, .9)
     .to(invite, { duration: 1.2, ...scramble(invite, "lowerCase", .5, .2) }, .2)
@@ -165,7 +165,7 @@ function genericReveals() {
 
 function finale() {
   gsap.from(splitText($("[data-finale-name]")), {
-    yPercent: 80, opacity: 0, rotate: 10, filter: "blur(8px)", duration: 1.4, ease: "rm", stagger: .07,
+    yPercent: 80, opacity: 0, rotate: 10, filter: "blur(8px)", duration: 1.4, ease: "rm", stagger: .07, clearProps: "filter",
     scrollTrigger: onEnter(".finale", "top 65%"),
   });
   gsap.from([".finale .eyebrow", ".finale-sign"], {
