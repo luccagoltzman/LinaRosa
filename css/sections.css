@@ -175,6 +175,42 @@
   color: var(--ink-soft);
 }
 
+/* ---------- 2b. Música ---------- */
+.music {
+  padding: 0 0 clamp(40px, 8vh, 90px);
+  text-align: center;
+}
+
+.music .eyebrow {
+  display: block;
+}
+
+.music-title {
+  margin-top: .6rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--wine);
+}
+
+.music-title em {
+  color: var(--ink-soft);
+}
+
+.music-player {
+  width: min(520px, 100%);
+  margin: 1.6rem auto 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 30px 60px -45px rgba(134, 72, 65, .45);
+}
+
+.music-player iframe {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+}
+
 /* ---------- 3. Data e contagem regressiva ---------- */
 .date {
   padding: clamp(70px, 14vh, 150px) 0 clamp(90px, 16vh, 170px);
@@ -510,52 +546,6 @@ textarea.input {
 .choice input:focus-visible + label {
   outline: 1px solid var(--rose);
   outline-offset: 3px;
-}
-
-/* Quantidade de pessoas */
-.guests {
-  overflow: hidden;
-  transition: height .6s var(--ease), opacity .4s;
-}
-
-.stepper {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.stepper button {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: var(--wine);
-  transition: border-color .3s, background .3s, color .3s;
-}
-
-.stepper button:hover {
-  border-color: var(--wine);
-  background: var(--wine);
-  color: var(--paper);
-}
-
-.stepper output {
-  min-width: 1.6em;
-  font-size: 2.2rem;
-  font-variant-numeric: lining-nums tabular-nums;
-  line-height: 1;
-  text-align: center;
-  color: var(--wine);
-}
-
-.stepper small {
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--ink-soft);
 }
 
 .submit {
