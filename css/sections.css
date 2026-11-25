@@ -196,19 +196,110 @@
 }
 
 .music-player {
-  width: min(520px, 100%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(460px, 100%);
   margin: 1.6rem auto 0;
-  padding: 8px;
+  padding: 12px 18px 12px 12px;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 100px;
   background: var(--paper);
   box-shadow: 0 30px 60px -45px rgba(134, 72, 65, .45);
+  text-align: left;
 }
 
-.music-player iframe {
+.music-play {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--paper);
+  transition: background .4s, transform .4s var(--ease);
+}
+
+.music-play:hover {
+  background: var(--wine-deep);
+  transform: scale(1.05);
+}
+
+.music-play svg {
+  width: 18px;
+  height: 18px;
+}
+
+.music-play .i-pause,
+.music-on .music-play .i-play {
+  display: none;
+}
+
+.music-on .music-play .i-pause {
   display: block;
-  border: 0;
-  border-radius: 12px;
+}
+
+.music-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-state {
+  display: block;
+  font-family: var(--sans);
+  font-size: .62rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.music-progress {
+  height: 2px;
+  margin-top: .7rem;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.music-progress i {
+  display: block;
+  height: 100%;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s linear;
+}
+
+.music-spotify {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: .45em;
+  font-family: var(--sans);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition: color .3s;
+}
+
+.music-spotify:hover {
+  color: var(--wine);
+}
+
+.music-spotify svg {
+  width: 16px;
+  height: 16px;
+}
+
+.music-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: .8rem;
+  color: var(--ink-soft);
 }
 
 /* ---------- 3. Data e contagem regressiva ---------- */

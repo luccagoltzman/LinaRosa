@@ -5,6 +5,7 @@ import { initCountdown } from "./countdown.js";
 import { initCalendar } from "./calendar.js";
 import { initPetals } from "./petals.js";
 import { initRsvp } from "./rsvp.js";
+import { initMusic } from "./music.js";
 import { initSmoothScroll, scrollToTop } from "./smooth-scroll.js";
 import { initAnimations, showStatic } from "./animations.js";
 
@@ -15,6 +16,7 @@ initCountdown();
 initCalendar();
 initRsvp();
 initPetals();
+initMusic();
 
 if (hasGsap && !reduceMotion) {
   initSmoothScroll();

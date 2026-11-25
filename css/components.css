@@ -86,8 +86,99 @@
   transform-origin: left;
 }
 
-.loader-label {
+/* "anos de história" e o botão "Abrir convite" ocupam o mesmo lugar */
+.loader-foot {
+  display: grid;
   margin-top: 1.4rem;
+}
+
+.loader-foot > * {
+  grid-area: 1 / 1;
+}
+
+.loader-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .9rem;
+  pointer-events: auto;
+}
+
+.loader-open[hidden] {
+  display: none;
+}
+
+.loader-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--ink-soft);
+}
+
+.loader-hint svg {
+  width: 12px;
+  height: 12px;
+  color: var(--rose);
+}
+
+/* ---------- Botão de som flutuante ---------- */
+.sound {
+  position: fixed;
+  left: clamp(14px, 2vw, 30px);
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 61;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(253, 249, 243, .85);
+  backdrop-filter: blur(8px);
+  color: var(--wine);
+  transition: border-color .4s, transform .4s var(--ease);
+}
+
+.sound:hover {
+  border-color: var(--wine);
+  transform: scale(1.06);
+}
+
+.sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+
+.sound-bars i {
+  width: 2px;
+  height: 30%;
+  border-radius: 2px;
+  background: currentColor;
+  transition: height .4s;
+}
+
+/* Barras dançam enquanto a música toca */
+.music-on .sound-bars i {
+  animation: eq 1s ease-in-out infinite alternate;
+}
+
+.music-on .sound-bars i:nth-child(2) { animation-delay: -.4s; }
+.music-on .sound-bars i:nth-child(3) { animation-delay: -.7s; }
+.music-on .sound-bars i:nth-child(4) { animation-delay: -.2s; }
+
+@keyframes eq {
+  from { height: 20%; }
+  to   { height: 100%; }
+}
+
+/* Escondido enquanto o loader está na tela */
+.is-loading .sound {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ---------- Florais ---------- */
@@ -218,10 +309,13 @@
 }
 
 /* Texto que rola para uma segunda cópia no hover */
+/* "clip" (em vez de "hidden") impede que o navegador role o texto por
+   dentro do botão — era isso que deixava as duas cópias meio à mostra. */
 .btn .t {
   display: inline-block;
   height: 1.25em;
   overflow: hidden;
+  overflow: clip;
   line-height: 1.25em;
 }
 
@@ -328,7 +422,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .grain {
+  .grain,
+  .music-on .sound-bars i {
     animation: none;
   }
 }
