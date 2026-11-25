@@ -86,41 +86,8 @@
   transform-origin: left;
 }
 
-/* "anos de história" e o botão "Abrir convite" ocupam o mesmo lugar */
-.loader-foot {
-  display: grid;
+.loader-label {
   margin-top: 1.4rem;
-}
-
-.loader-foot > * {
-  grid-area: 1 / 1;
-}
-
-.loader-open {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .9rem;
-  pointer-events: auto;
-}
-
-.loader-open[hidden] {
-  display: none;
-}
-
-.loader-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: .5em;
-  font-style: italic;
-  font-size: .95rem;
-  color: var(--ink-soft);
-}
-
-.loader-hint svg {
-  width: 12px;
-  height: 12px;
-  color: var(--rose);
 }
 
 /* ---------- Botão de som flutuante ---------- */

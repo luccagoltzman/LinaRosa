@@ -1,7 +1,8 @@
 // Música de fundo.
-// Os navegadores só deixam tocar som depois de um toque da pessoa, então a
-// música começa no botão "Abrir convite" (ou em qualquer botão de som).
-// Ela entra com volume suave, pausa quando o convite sai da tela e volta depois.
+// A música tenta tocar sozinha quando o convite abre. A maioria dos navegadores
+// (principalmente no celular) bloqueia som antes de um toque da pessoa; nesse
+// caso ela começa no primeiro toque, clique ou tecla em qualquer lugar da página.
+// Entra com volume suave, pausa quando o convite sai da tela e volta depois.
 
 import { $, $$ } from "./config.js";
 
@@ -39,14 +40,36 @@ export function playMusic() {
   wantsPlaying = true;
   audio.volume = 0;
   audio.play()
-    .then(() => fadeTo(VOLUME, FADE_MS))
-    .catch(() => { /* bloqueado ou sem arquivo: segue sem música */ });
+    .then(() => {
+      disarmUnlock();
+      fadeTo(VOLUME, FADE_MS);
+    })
+    .catch(armUnlock); // bloqueado: espera o primeiro toque
 }
 
 export function pauseMusic() {
   if (!audio) return;
   wantsPlaying = false;
+  disarmUnlock();
   fadeTo(0, 400, () => audio.pause());
+}
+
+/* ---------- Começa no primeiro toque, se o navegador bloqueou ---------- */
+// Eventos que os navegadores aceitam como "gesto" para liberar o som.
+const UNLOCK_EVENTS = ["pointerdown", "touchend", "click", "keydown"];
+
+function onFirstGesture(event) {
+  // Um toque no próprio botão de som é tratado por ele.
+  if (event.target.closest?.("[data-music-toggle]")) return;
+  if (wantsPlaying && audio.paused) playMusic();
+}
+
+function armUnlock() {
+  UNLOCK_EVENTS.forEach(evt => document.addEventListener(evt, onFirstGesture, { capture: true, passive: true }));
+}
+
+function disarmUnlock() {
+  UNLOCK_EVENTS.forEach(evt => document.removeEventListener(evt, onFirstGesture, { capture: true }));
 }
 
 export function initMusic() {

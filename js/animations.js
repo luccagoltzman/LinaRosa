@@ -52,30 +52,8 @@ function playLoader(onOpen, onDone) {
     }, 0)
     .to(".loader-bar i", { scaleX: 1, duration: 2.1, ease: "power4.inOut" }, 0)
     .add(scrollToTop)
-    .add(() => showOpenButton(onOpen, onDone), "+=.15");
-}
-
-// "anos de história" dá lugar ao botão "Abrir convite". O toque nele é o que
-// permite ao navegador tocar a música.
-function showOpenButton(onOpen, onDone) {
-  const wrap = $("[data-open]");
-  const button = $("[data-open-btn]");
-
-  gsap.to(".loader-label", { yPercent: -60, opacity: 0, duration: .5, ease: "power2.in" });
-  wrap.hidden = false;
-  gsap.from(wrap.children, { y: 24, opacity: 0, duration: 1, ease: "expo.out", stagger: .12, delay: .35 });
-  setTimeout(() => button.focus({ preventScroll: true }), 400);
-
-  button.addEventListener("click", () => {
-    button.disabled = true;
-    onOpen();
-    liftLoader(onDone);
-  }, { once: true });
-}
-
-function liftLoader(onDone) {
-  gsap.timeline()
-    .to(".loader-inner", { yPercent: -30, opacity: 0, duration: .9, ease: "rm" })
+    .add(onOpen)
+    .to(".loader-inner", { yPercent: -30, opacity: 0, duration: .9, ease: "rm" }, "+=.25")
     .to(".loader-panel", { yPercent: -101, duration: 1.2, ease: "rm", stagger: { amount: .3, from: "random" } }, "-=.55")
     .add(() => {
       document.body.classList.remove("is-loading");

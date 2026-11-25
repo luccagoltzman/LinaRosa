@@ -24,14 +24,14 @@ js/
   calendar.js         Botão "Salvar no celular" (.ics)
   rsvp.js             Formulário de confirmação de presença
   petals.js           Pétalas caindo e chuva de pétalas
-  music.js            Música de fundo (começa no botão "Abrir convite")
+  music.js            Música de fundo
 ```
 
 ### Música
 
 `assets/canon-in-d.mp3` — "Canon in D Major" (Pachelbel), gravação de Kevin MacLeod ([incompetech.com](https://incompetech.com)), licenciada sob [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/). Fonte: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Canon_in_D_Major_(ISRC_USUAN1100301).mp3). O crédito aparece na seção de música do convite, como a licença exige.
 
-Os navegadores só tocam som depois de um toque da pessoa, por isso a música começa ao tocar em "Abrir convite".
+A música tenta tocar sozinha quando o convite abre. Quando o navegador bloqueia som automático (o que acontece na maioria dos celulares), ela começa no primeiro toque da pessoa em qualquer lugar da página.
 
 Para mudar data, horário, local ou o número do WhatsApp, edite `js/config.js` (e os textos correspondentes no `index.html`).
 
